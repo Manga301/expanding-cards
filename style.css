@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Mulish:wght@200;400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 200;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 90vw;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in 0.2s;
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in 0.5s;
+    background: #222222c4;
+    width: 20%;
+    padding: 10px;
+    border-radius: 18px;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* if scrren is small show 3 panels */
+@media(max-width: 480px){
+    .container {
+        width: 100vw;
+    }
+    /* make 4 and 5 display: none */
+    .panel:nth-of-type(4), 
+    .panel.panel:nth-of-type(5){
+        display: none;
+    }
+}
